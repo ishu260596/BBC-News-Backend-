@@ -57,4 +57,9 @@ public class NewsServiceImpl implements NewsService {
     public Iterable<Newsarticle> getWorldNews() {
         return newsDAO.findAll();
     }
+
+    @Override
+    public Iterable<Newsarticle> getNewsTag(String tag) {
+        return newsDAO.getNewsTag(tag);
+    }
 }

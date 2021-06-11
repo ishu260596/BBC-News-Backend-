@@ -15,6 +15,9 @@ public interface NewsDAO extends CrudRepository<Newsarticle, Integer> {
 
     @Query("select n from Newsarticle n where n.category= ?1")
     Iterable<Newsarticle> getNewsByCategory(String category);
+
+    @Query("select n from Newsarticle n where n.tags= ?1")
+    Iterable<Newsarticle> getNewsTag(String tag);
 }
 
 

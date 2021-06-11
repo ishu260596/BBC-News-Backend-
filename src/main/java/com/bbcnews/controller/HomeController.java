@@ -6,6 +6,8 @@ import com.bbcnews.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
+
 @RestController
 @RequestMapping("/api/bbc")
 public class HomeController {
@@ -16,7 +18,8 @@ public class HomeController {
     private UserService userService;
 
     @GetMapping("/allUsers")
-    public Iterable<User> getAllUsers() {
+    public Iterable<User> getAllUsers()
+    {
         return userService.getAllUser();
     }
 
@@ -48,6 +51,11 @@ public class HomeController {
     @GetMapping("/category")
     public Iterable<Newsarticle> newsByCategory(@RequestParam String category) {
         return newsService.getNewsByCategory(category);
+    }
+
+    @GetMapping("/tag")
+    public Iterable<Newsarticle> newsByTag(@RequestParam String q) {
+        return newsService.getNewsTag(q );
     }
 
     @GetMapping("/region/category")

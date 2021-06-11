@@ -22,4 +22,6 @@ public interface NewsService {
     Iterable<Newsarticle> getNewsByCategory(String category);
 
     Iterable<Newsarticle> getWorldNews();
+
+    Iterable<Newsarticle> getNewsTag(String tag);
 }
